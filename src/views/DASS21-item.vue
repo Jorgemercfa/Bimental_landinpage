@@ -7,8 +7,8 @@ import Footer from '@/components/Footer-item.vue';
   <header>
     <navbar />
   </header>
+  <h1 class="title">Información sobre el DASS-21</h1>
   <div class="dass-space">
-    <h1 class="title">Información sobre el DASS-21</h1>
     <div class="pa-1">El cuestionario DASS-21</div>
     <div class="pa-2"></div>
   </div>

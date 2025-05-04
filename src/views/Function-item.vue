@@ -7,8 +7,8 @@ import Footer from '@/components/Footer-item.vue';
   <header>
     <navbar />
   </header>
+  <h1 class="title">¿Como funciona?</h1>
   <div class="function-space">
-    <h1 class="title">¿Como funciona?</h1>
     <div class="pa-1">
       La aplicación movil Bimental consiste en un Chatbot en el cual puedes
       interactuar con él para que te pueda dar consejos de salud mental y en

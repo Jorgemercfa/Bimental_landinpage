@@ -7,10 +7,8 @@ import Footer from '@/components/Footer-item.vue';
   <header>
     <navbar />
   </header>
-
+  <h1 class="title">Beneficios para el usuario</h1>
   <div class="benefits-space">
-    <h1 class="title">Beneficios para el usuario</h1>
-
     <div class="pa-1">
       Los beneficioens que la aplicación movil Bimental , que integre un
       Chatbot, el cual gestionará las evaluaciones a los que se sometan los
