@@ -23,8 +23,8 @@ import Footer from '@/components/Footer-item.vue';
 
 <style>
 .home-area {
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 2px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -32,37 +32,36 @@ import Footer from '@/components/Footer-item.vue';
 }
 
 .title-home {
-  font-size: 84px;
-  margin-bottom: 10px;
+  font-size: 58px;
+  margin-bottom: 5px;
   text-align: center;
 }
 
 .subtitle-home {
-  font-size: 24px;
+  font-size: 20px;
   margin-bottom: 2px;
   text-align: center;
 }
 
 .home-description {
-  font-size: 24px;
-  margin-top: 100px;
+  font-size: 16px;
+  margin-top: 30px;
 }
 
 .home-image {
-  height: 400px;
-  border-radius: 10px;
+  height: 200px;
   align-items: center;
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
   .home-image {
-    height: 300px;
+    height: 100px;
   }
 }
 
 @media (min-width: 300px) and (max-width: 768px) {
   .home-image {
-    height: 200px;
+    height: 90px;
   }
 }
 </style>
