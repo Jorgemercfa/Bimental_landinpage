@@ -5,7 +5,7 @@
       <router-link to="/" class="text-navbar">Inicio</router-link>
       <router-link to="/About-item" class="text-navbar">Acerca de</router-link>
       <router-link to="/Function-item" class="text-navbar"
-        >¿Como funciona?</router-link
+        >Como funciona</router-link
       >
       <router-link to="/Benefits-item" class="text-navbar"
         >Beneficios para el usuario</router-link
