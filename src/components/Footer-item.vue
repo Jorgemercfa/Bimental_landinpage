@@ -14,10 +14,10 @@ import 'primeicons/primeicons.css';
       <h4 class="titile-footer">Redes Sociales</h4>
       <div class="social-media2">
         <div>
-          <a href=""><i class="pi pi-instagram"></i></a>
+          <a href=""><i class="pi pi-instagram icon"></i></a>
         </div>
         <div>
-          <a href=""><i class="pi pi-youtube"></i></a>
+          <a href=""><i class="pi pi-youtube icon"></i></a>
         </div>
       </div>
     </div>
@@ -60,13 +60,8 @@ import 'primeicons/primeicons.css';
   gap: 10px;
 }
 
-.pi-instagram {
+.pi {
   font-size: 2rem;
-  color: white;
-}
-
-.pi-youtube {
-  font-size: 2rem;
-  color: white;
+  color: #ffffffff;
 }
 </style>
