@@ -30,7 +30,7 @@ import Footer from '@/components/Footer-item.vue';
         confiable para contribuir al bienestar emocional de las personas.
         Resultados de la evaluación: Nivel de depresión, ansiedad y estrés según
         el procesamiento del modelo de Machine Learning. Los resultados son
-        aproximados y no constituyen un diagnóstico médico profesional
+        aproximados y no constituyen un diagnóstico médico profesional.
       </div>
       <table class="modern-table">
         <tr>

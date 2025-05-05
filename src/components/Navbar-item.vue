@@ -8,7 +8,7 @@
         >Como funciona</router-link
       >
       <router-link to="/Benefits-item" class="text-navbar"
-        >Beneficios para el usuario</router-link
+        >Beneficios</router-link
       >
       <router-link to="/DASS21-item" class="text-navbar">DASS-21</router-link>
     </div>
