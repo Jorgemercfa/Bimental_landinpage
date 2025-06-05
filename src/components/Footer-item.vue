@@ -14,6 +14,9 @@ import 'primeicons/primeicons.css';
       <h4 class="titile-footer">Redes Sociales</h4>
       <div class="social-media2">
         <div>
+          <a href=""><i class="pi pi-facebook icon"></i></a>
+        </div>
+        <div>
           <a href=""><i class="pi pi-instagram icon"></i></a>
         </div>
         <div>
@@ -24,7 +27,7 @@ import 'primeicons/primeicons.css';
   </div>
 </template>
 
-<style>
+<style scoped>
 .footer-area {
   background-color: #000000;
   width: 100%;
@@ -60,6 +63,7 @@ import 'primeicons/primeicons.css';
   gap: 10px;
 }
 
+/* Esta clase ahora SÓLO aplica en este componente gracias a scoped */
 .pi {
   font-size: 2rem;
   color: #ffffffff;
