@@ -63,7 +63,7 @@ export default {
   .link-style {
     display: none;
     flex-direction: column;
-    background-color: #e43030;
+    background-color: #0ea722;
     position: absolute;
     top: 70px;
     left: 0;
