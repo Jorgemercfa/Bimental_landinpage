@@ -4,11 +4,10 @@ import Footer from '@/components/Footer-item.vue';
 </script>
 
 <template>
-  <!-- El contenedor principal hace que el footer se mantenga al fondo -->
-  <div class="main-content">
-    <header>
-      <navbar />
-    </header>
+  <header>
+    <navbar />
+  </header>
+  <div class="home-area">
     <h1 class="title-home">Bimental</h1>
     <h3 class="subtitle-home">Evalúa tu salud mental en minutos</h3>
     <div class="home-area">
@@ -18,42 +17,59 @@ import Footer from '@/components/Footer-item.vue';
         depresión y estrés mediante un chatbot inteligente
       </h3>
     </div>
-    <footer>
-      <Footer />
-    </footer>
+    <div class="download-area">
+      <h3 class="subtitle-home">Descarga la app</h3>
+      <div class="badges-container">
+        <a href="https://play.google.com/store/apps?hl=es_419" target="_blank">
+          <img
+            src="@/assets/google-play-badge.png"
+            alt="Google Play Store"
+            width="200"
+            class="store-badge"
+          />
+        </a>
+        <a href="https://apps.apple.com/us/app" target="_blank">
+          <img
+            src="@/assets/apple-play-badge.png"
+            alt="App Store"
+            width="200"
+            class="store-badge"
+          />
+        </a>
+      </div>
+    </div>
   </div>
+  <footer>
+    <Footer />
+  </footer>
 </template>
 
 <style>
-/* Asegura que la app ocupe toda la altura y el footer quede pegado abajo */
-body,
-#app {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-}
-
-.main-content {
-  flex: 1 0 auto;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-/* El footer se mantiene abajo si hay poco contenido */
-footer {
-  margin-top: auto;
-}
-
-/* Estilos originales mejorados */
 .home-area {
-  margin-top: 2px;
-  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  padding: 20px;
+}
+.download-area {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.badges-container {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.store-badge {
+  max-width: 180px;
+  height: auto;
 }
 
 .title-home {
@@ -73,6 +89,7 @@ footer {
   margin-top: 30px;
   text-align: center;
   padding: 0 24px;
+  max-width: 800px;
 }
 
 .home-image {
@@ -102,6 +119,9 @@ footer {
     margin-top: 20px;
     padding: 0 16px;
   }
+  .store-badge {
+    max-width: 150px;
+  }
 }
 
 /* Mobile */
@@ -124,11 +144,16 @@ footer {
   .home-description {
     font-size: 12px;
     margin-top: 10px;
-    padding: 0 8px;
   }
   .home-area {
     margin-bottom: 10px;
     padding-bottom: 16px;
+  }
+  .download-area {
+    margin-bottom: 15px;
+  }
+  .store-badge {
+    max-width: 120px;
   }
 }
 </style>
