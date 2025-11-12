@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="refresh" content="0; url=./index.html">
+    <script>
+      // Fallback para SPA en history mode:
+      // redirige a index.html y pone la ruta original en el hash
+      // para que vue-router (en modo hash) recupere la ruta.
+      var path = location.pathname + location.search + location.hash;
+      location.replace('./index.html#' + path);
+    </script>
+    <title>Redirecting…</title>
+  </head>
+  <body>Redirecting…</body>
+</html>
