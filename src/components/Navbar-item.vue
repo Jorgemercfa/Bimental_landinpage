@@ -11,6 +11,9 @@
         >Beneficios</router-link
       >
       <router-link to="/DASS21-item" class="text-navbar">DASS-21</router-link>
+      <router-link to="/Delete-account" class="text-navbar"
+        >Eliminar Cuenta</router-link
+      >
     </div>
   </div>
 </template>
