@@ -9,13 +9,15 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pages: write
+      id-token: write
     
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       
     - name: Setup Node
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: 18
         cache: 'npm'
@@ -27,18 +29,32 @@ jobs:
       run: npm run build
       
     - name: Setup Pages
-      uses: actions/configure-pages@v2
+      uses: actions/configure-pages@v4
       
     - name: Copy APK and create .nojekyll
       run: |
-        cp -r public/downloads dist/
-        cd dist && touch .nojekyll
+        # Asegurar que la carpeta downloads existe en dist
+        mkdir -p dist/downloads
+        # Copiar el APK
+        cp public/downloads/app-release.apk dist/downloads/
+        # Crear .nojekyll
+        touch dist/.nojekyll
+        
+    - name: Verify files
+      run: |
+        cd dist
+        echo "📁 Contenido de dist:"
+        ls -la
+        echo "📁 Contenido de downloads:"
+        ls -la downloads/
+        echo "✅ Verificando que .nojekyll existe:"
+        ls -la .nojekyll
         
     - name: Upload artifact
-      uses: actions/upload-pages-artifact@v1
+      uses: actions/upload-pages-artifact@v3
       with:
         path: './dist'
         
     - name: Deploy to GitHub Pages
       id: deployment
-      uses: actions/deploy-pages@v1
+      uses: actions/deploy-pages@v4
