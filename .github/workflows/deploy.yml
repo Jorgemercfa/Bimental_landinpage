@@ -27,6 +27,23 @@ jobs:
     - name: Build Vue project
       run: npm run build
 
+    - name: Create .nojekyll file
+      run: |
+        cd dist
+        touch .nojekyll
+        # También copia la carpeta downloads al dist si no se copió automáticamente
+        if [ -d "../public/downloads" ]; then
+          cp -r ../public/downloads ./
+        fi
+
+    - name: Verify APK file exists
+      run: |
+        cd dist
+        echo "Contenido de la carpeta dist:"
+        ls -la
+        echo "Contenido de downloads (si existe):"
+        ls -la downloads/ || echo "No hay carpeta downloads"
+
     - name: Deploy to gh-pages
       uses: JamesIves/github-pages-deploy-action@v4
       with:

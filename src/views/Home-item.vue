@@ -22,7 +22,7 @@ import Footer from '@/components/Footer-item.vue';
       <div class="badges-container">
         <!-- Enlace directo al apk -->
         <a
-          href="/downloads/app-release.apk"
+          href="https://jorgamercfa.github.io/Bimental_landingpage/downloads/app-release.apk"
           download="Bimental-App.apk"
           class="download-link"
         >
