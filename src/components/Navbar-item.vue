@@ -14,6 +14,9 @@
       <router-link to="/Delete-account" class="text-navbar"
         >Eliminar Cuenta</router-link
       >
+      <router-link to="/Privacy-Policy" class="text-navbar"
+        >Políticas de Privacidad</router-link
+      >
     </div>
   </div>
 </template>

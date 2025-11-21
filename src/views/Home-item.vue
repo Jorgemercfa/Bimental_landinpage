@@ -20,6 +20,19 @@ import Footer from '@/components/Footer-item.vue';
     <div class="download-area">
       <h3 class="subtitle-home">Descarga la app</h3>
       <div class="badges-container">
+        <!-- Enlace directo al apk -->
+        <a
+          href="/downloads/app-release.apk"
+          download="Bimental-App.apk"
+          class="download-link"
+        >
+          <img
+            src="@/assets/android-direct-badge.png"
+            alt="Descargar APK Directo"
+            width="200"
+            class="store-badge"
+          />
+        </a>
         <a href="https://play.google.com/store/apps?hl=es_419" target="_blank">
           <img
             src="@/assets/google-play-badge.png"
@@ -28,15 +41,19 @@ import Footer from '@/components/Footer-item.vue';
             class="store-badge"
           />
         </a>
-        <a href="https://apps.apple.com/us/app" target="_blank">
+        <!-- <a href="https://apps.apple.com/us/app" target="_blank">
           <img
             src="@/assets/apple-play-badge.png"
             alt="App Store"
             width="200"
             class="store-badge"
           />
-        </a>
+        </a> -->
       </div>
+      <p class="download-instructions">
+        ⬇️ <strong>Descarga Directa:</strong> Instala la app directamente desde
+        nuestro sitio web
+      </p>
     </div>
   </div>
   <footer>
@@ -70,6 +87,23 @@ import Footer from '@/components/Footer-item.vue';
 .store-badge {
   max-width: 180px;
   height: auto;
+  transition: transform 0.3s ease;
+}
+
+.store-badge:hover {
+  transform: scale(1.05);
+}
+
+.download-link {
+  text-decoration: none;
+}
+
+.download-instructions {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  margin-top: 10px;
+  max-width: 400px;
 }
 
 .title-home {
@@ -122,6 +156,10 @@ import Footer from '@/components/Footer-item.vue';
   .store-badge {
     max-width: 150px;
   }
+  .download-instructions {
+    font-size: 12px;
+    padding: 0 20px;
+  }
 }
 
 /* Mobile */
@@ -154,6 +192,10 @@ import Footer from '@/components/Footer-item.vue';
   }
   .store-badge {
     max-width: 120px;
+  }
+  .download-instructions {
+    font-size: 11px;
+    padding: 0 15px;
   }
 }
 </style>
