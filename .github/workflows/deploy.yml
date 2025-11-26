@@ -2,62 +2,34 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
-
-# Permisos globales
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+    branches:
+      - main  # Despliega cuando hagas push a main
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write  # 👈 Permiso necesario para hacer push a gh-pages
+
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-      
+    - name: Checkout source
+      uses: actions/checkout@v3
+
     - name: Setup Node
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v3
       with:
         node-version: 18
-        cache: 'npm'
-        
-    - name: Install dependencies
-      run: npm ci
-      
-    - name: Build
-      run: npm run build
-      
-    - name: Copy APK and create .nojekyll
-      run: |
-        mkdir -p dist/downloads
-        cp public/downloads/app-release.apk dist/downloads/
-        touch dist/.nojekyll
-        
-    - name: Verify files
-      run: |
-        cd dist
-        echo "📁 Contenido de dist:"
-        ls -la
-        echo "📁 Contenido de downloads:"
-        ls -la downloads/
-        
-    - name: Setup Pages
-      uses: actions/configure-pages@v4
-      
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: './dist'
 
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build Vue project
+      run: npm run build
+
+    - name: Deploy to gh-pages
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}  # 👈 Token necesario para permisos
+        branch: gh-pages                   # Rama de destino
+        folder: dist                       # Carpeta que se va a desplegar
